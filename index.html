@@ -33,26 +33,57 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.2.0/jquery.smooth-scroll.min.js" integrity="sha512-0tWfLL+YANip9Uo2YUY4/SxvwDgPUuoSUcIXPFULXiXXgLKmiC/qCeDxnhl+mLobu6e/dSlyhGheCtzd9+RLCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- fontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./default.css">
     <title>나를 위한 선물 - 여행</title>
-
-    <script>
-        window.onload=function(){
-            let btnNav = document.getElementById('btn-nav');
-            btnNav.addEventListener('click',function(){
-                let _header = document.querySelector('.header');
-                let _nav = document.querySelector('.nav');
-                _header.classList.toggle('show-nav');
-                _nav.classList.toggle('show-nav');
-            })
+    <!-- 기본공통스타일 -->
+    <link rel="stylesheet" href="./css/default.css">
+    <!-- 기본공통스크립트 -->
+    <script src="./js/default.js"></script>
+    <style>
+        .main-slider{
+            margin-bottom:23px;
         }
-        // $(function(){
-        //     $('#btn-nav').on({
-        //         'click':function(){
-        //             $('.header,.nav').toggleClass('show-nav');                    
-        //         },
-        //     });
-        // })
+        .bx-wrapper{
+            margin-bottom:0;
+            border:none;
+        }        
+        .bx-wrapper .bx-controls-direction a{
+            background:#999;
+            display:none;
+
+        }
+        .bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto{
+            padding:0;
+            bottom:16px;
+            right: 16px;
+            width:auto;
+        }
+        .bx-wrapper .bx-pager.bx-default-pager a{
+            margin-right:0;
+        }
+        .sec-tit,.section article{
+            margin-bottom:23px;
+        }
+        .sec-tit h2{
+            margin-bottom:8px;
+            font-weight:300;
+            font-size:20px;
+            text-align:center;
+        }
+        .section article .img-box{
+            margin-bottom:8px;
+        }
+        .section article p{
+            text-align:center;
+            line-height:24px;
+        }
+    </style>
+    <script>
+        $(function(){
+            $('.slider').bxSlider();
+        })
+        
+
+        
     </script>
 </head>
 <body>
@@ -105,15 +136,40 @@
                 </div>
             </div>
         </header>
-        <section class="slider"></section>
-        <section class="section" id="main"></section>
+        <section class="main-slider">
+            <div class="slider">
+                <div><a href="#"><img src="./images/slide01.jpg" alt="여행경비 30% 할인"></a></div>
+                <div><a href="#"><img src="./images/slide02.jpg" alt="2+1 둘이 모이면 한명은 공짜"></a></div>
+                <div><a href="#"><img src="./images/slide03.jpg" alt="위드코로나로 인한 특별한 혜택"></a></div>
+            </div>
+        </section>
+        <section class="section" id="main">
+            <div class="container">
+                <div class="sec-tit">
+                    <h2>다시 찾는 인기 여행지</h2>
+                    <h3 class="sm-tit">TOP3</h3>
+                </div>
+                <article class="art01">
+                    <div class="img-box"><a href="#"><img src="./images/best01.jpg" alt="첨성대"></a></div>
+                    <h3 class="sm-tit">경주 첨성대</h3>
+                    <p>첨성대는 천년고도 경주에서 있는 천문 관측시설 또는 하늘에 제사를 지내던 것으로 생각되는 건축물로써 그 모양이 실로 묘하다.</p>
+                </article>
+                <article class="art02">
+                    <div class="img-box"><a href="#"><img src="./images/best02.jpg" alt="런던 브릿지"></a></div>
+                    <h3 class="sm-tit">런던 브릿지</h3>
+                    <p>해가 지지않는 대영제국의 수도 런던 템즈강에 위치한 다리로 배가 지나가면 들어 올려진다. 스타이더멘등의 영화 촬영장으로도 유명하다.</p>
+                </article>
+                <article class="art03">
+                    <div class="img-box"><a href="#"><img src="./images/best03.jpg" alt="이집트 피라미드"></a></div>
+                    <h3 class="sm-tit">이집트 피라미드</h3>
+                    <p>세계 4대 문명지인 아프리카의 이집트 고왕조 시대의 전축물로써 위대한 파라오의 무덤이라는 설과 외계인이 내려와서 건설한 안테라나는 말도 있다.</p>
+                </article>
+            </div>
+        </section>
         <section class="line"></section>
         <section class="notice"></section>
         <footer class="footer"></footer>
 
-        <script>
-
-        </script>
     </section>
 </body>
 </html>
